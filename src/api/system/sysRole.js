@@ -16,5 +16,48 @@ export default {
       method: 'get',
       params: searchObj
     })
-  }
+  },
+  /**
+   * 根据id删除
+   * @param id
+   * @returns {*}
+   */
+  removeById(id) {
+    return request({
+      url: `${api_name}/remove/${id}`,
+      method: 'delete'
+    })
+  },
+  /**
+   * 保存
+   * @param role
+   * @returns {*}
+   */
+  save(role) {
+    return request({
+      url: `${api_name}/save`,
+      method: 'post',
+      data: role
+    })
+  },
+  getById(id) {
+    return request({
+      url: `${api_name}/get/${id}`,
+      method: 'get'
+    })
+  },
+  updateById(role) {
+    return request({
+      url: `${api_name}/update`,
+      method: 'put',
+      data: role
+    })
+  },
+  batchRemove(idList) {
+    return request({
+      url: `${api_name}/batchRemove`,
+      method: `delete`,
+      data: idList
+    })
+  },
 }
